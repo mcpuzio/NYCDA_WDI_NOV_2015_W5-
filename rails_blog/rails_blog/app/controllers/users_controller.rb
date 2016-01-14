@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(params[:user])
+		@user = User.create(params[:username])
 		redirect_to @user
 	end
 
@@ -22,13 +22,14 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update(params[:user])
+		if @user.update(params[:username])
 			@user.save
 			flash[:notice] = "Your profile is updated!"
 			redirect_to @user
 		else
 			flash[:alert] = "Your profile was not updated."
 			redirect_to edit_user_path		
+		end
 	end
 
 	def destroy
@@ -40,4 +41,5 @@ class UsersController < ApplicationController
   		end
 			redirect_to users_path
 		end
-end
+	end
+

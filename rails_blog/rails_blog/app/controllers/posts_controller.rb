@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.create(params[:post])
+		@post = Post.create(params[:post_id])
 	end
 
 	def update
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 			flash[:alert] = "Error; Post not deleted. Try again."
 		end
 			redirect_to posts_path
-		end
+		
 	end
 
 end

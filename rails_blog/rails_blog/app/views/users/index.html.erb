@@ -1,19 +1,24 @@
-<h1>Listing Users</h1>
-<table>
+<h1 class="head1">Fellow Bloggers</h1>
+<div id="table"><table>
 	<tr>
-		<th>Name</th>
-		<th></th>
-		<th></th>
-		<th></th>
+		<th id="Listing_Name">Username</th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
+		<th id="Listing_item"></th>
 	</tr>
 <% @users.each do |user| %>
 	<tr>
-		<td><%= user.fname %></td>
-    <td><%= link_to "Show", user %></td>
-    <td><%= link_to "Edit", edit_user_path(user) %></td>
-    <td><%= link_to "Delete User", user, method: :delete %></td>
+		<td class="table_keys"><%= user.username %></td>
+    <td class="table_keys" ><%= link_to "Show", user %></td>
+    <td class="table_keys" ><%= link_to "Edit", edit_user_path(user) %></td>
+    <td class="table_keys" ><%= link_to "Delete User", user, method: :delete %></td>
   </tr>
 <% end %>
-</table>
+</table></div>
 <br>
-<%= link_to "New User", new_user_path %>
+<h3 id="new_user"><%= link_to "New User", new_user_path %></h3>

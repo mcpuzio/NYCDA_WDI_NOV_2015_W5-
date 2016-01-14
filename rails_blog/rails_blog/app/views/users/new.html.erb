@@ -1,6 +1,10 @@
-<h1>New User</h1>
+<h1 class="head1">Join Today</h1>
+<div id="table">
 <%= form_for(@user) do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :fname %>
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+	<%= f.label :password %>
+	<%= f.text_field :password %>
 	<%= f.submit :create %>
 <% end %>
+</div>
